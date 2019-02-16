@@ -151,6 +151,9 @@
                             //配置以这个文件路径作为web服务的根路劲
                             contentBase:path.resolve(__dirname,'./dist')
                         } 
+    -   4. 配置npm的脚本，找到package.json文件在scripts对象中填写
+            -   "dev":'webpack-dev-server'---开发时启动服务使用：npm run dev
+            -   "build":'webpack'----打包时使用命令：npm run webpack
 
 ###. 引入模块的方式去引入样式文件时报错
 
