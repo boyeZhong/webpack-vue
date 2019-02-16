@@ -37,5 +37,12 @@ module.exports={
        alias:{
         vue:'vue/dist/vue.esm.js'
        }
+    },
+    //开发服务配置webpack-dev-server
+    devServer:{
+        //配置以这个文件路径作为web服务的根路劲
+        contentBase:path.resolve(__dirname,'./dist')
     }
+    
+
 }

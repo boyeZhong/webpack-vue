@@ -142,8 +142,17 @@
   1. npm install --save-dev webpack-dev-server
   2. 配置
   3. webpack 启动 换成 webpack-dev-server 启动
+  4. 启动以后不能直接使用，他并不会帮我们把dist文件夹更新在硬盘，而是存放在内存中
+    -    1. 并且他启动的web服务是以项目根目录作为根目录，并不是dist文件夹  
+    -    2. 因此我们要在webpack.config.js文件中配置webpack-dev-server
+    -    3. 我们可以在webpack文档中的开发中找到devServer.contentBase查阅并配置
+            - //开发服务配置webpack-dev-server
+                devServer:{
+                            //配置以这个文件路径作为web服务的根路劲
+                            contentBase:path.resolve(__dirname,'./dist')
+                        } 
 
-###. 引入模块的方式去引入 样式文件报错
+###. 引入模块的方式去引入样式文件时报错
 
   css-loader      对css文件做转换 转换成 webpack所能识别的模块css文件
   style-loader    对上一步转换之后的 css模块文件再做解析，解析到页面的 style 标签中去。
