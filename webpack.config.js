@@ -14,6 +14,21 @@ module.exports={
         //设置文件打包之后的名字
         filename:'bundle.js'
     },
+    //加载器
+    module:{
+        //定义加载器的规则
+        rules:[
+            {
+                test:/\.css$/,//用正则的方式找到匹配的模块
+                //注意这个加载器书写时有顺序，必须倒叙写，第一步骤写在最底下
+                use:[
+                    'style-loader',
+                    'css-loader'
+                ]//使用什么加载器去处理这个模块
+            }
+        ]
+
+    },
     //插件，将index.html文件自动打包到dist文件夹里面使用HtmlWebpackPlugin插件，可以在webpack文档查询
     plugins:[
         //因为插件可能是多个，所以使用数组类型

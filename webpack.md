@@ -156,12 +156,28 @@
             -   "build":'webpack'----打包时使用命令：npm run webpack
 
 ###. 引入模块的方式去引入样式文件时报错
-
-  css-loader      对css文件做转换 转换成 webpack所能识别的模块css文件
-  style-loader    对上一步转换之后的 css模块文件再做解析，解析到页面的 style 标签中去。
+  - 在index.js文件中引入css文件的时候，因为webpack打包只认识js文件，图片，css，字体这些都不认识，所有先把css转换成webpack认识的东西
+  - 可以在官方文档的 指南 管理资源 加载css里面查阅文档
+  - css-loader      对css文件做转换 转换成 webpack所能识别的模块css文件（会转化成js文件）
+  - style-loader    对上一步转换之后的 css模块文件再做解析，解析到页面的 style 标签中去。
 
   1. npm install --save-dev css-loader style-loader
   2. 配置
+  3. //加载器
+            module:{
+            //定义加载器的规则
+            rules:[
+                {
+                    test:/\.css$/,//用正则的方式找到匹配的模块
+                    //注意这个加载器书写时有顺序，必须倒叙写，第一步骤写在最底下
+                    use:[
+                        'style-loader',
+                        'css-loader'
+                    ]//使用什么加载器去处理这个模块
+                }
+            ]
+
+
 
   
 ### 项目中使用 sass

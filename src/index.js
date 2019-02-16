@@ -1,5 +1,11 @@
 //通过esm的模块引入方式引入vue
 import Vue from 'vue';
+//引入css文件模块
+/**
+ * webpack打包只认识js文件，图片，css，字体这些都不认识，所有先把css转换成webpack认识的东西
+ * 通过在假期 css-loader style-loader
+ */
+import './style/style.css';
 
 //new一个根组件
 new Vue({
