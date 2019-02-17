@@ -5,7 +5,9 @@ import Vue from 'vue';
  * webpack打包只认识js文件，图片，css，字体这些都不认识，所有先把css转换成webpack认识的东西
  * 通过在假期 css-loader style-loader
  */
+import "./style/sassDome.scss";
 import './style/style.css';
+
 
 //new一个根组件
 new Vue({

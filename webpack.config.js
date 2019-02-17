@@ -25,6 +25,14 @@ module.exports={
                     'style-loader',
                     'css-loader'
                 ]//使用什么加载器去处理这个模块
+            },
+            {
+                test:/\.scss$/,
+                use:[
+                    'style-loader',//最后通过style-loader写到 网页上去
+                    'css-loader',//将css文件转换成webpack认识的模块文件
+                    'sass-loader'//将sass文件转换成css文件
+                ]
             }
         ]
 
